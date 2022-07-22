@@ -1,0 +1,86 @@
+Program that tells you how many companies you're interested in
+{
+  Amazon
+  Microsoft
+  Google
+  Minor Companies 
+  Macy
+
+
+}
+
+Program that tells you the status of those companies you've applied to: How long till next opening, if they do have opening
+{
+  Company: Microsoft
+  Hiring: Not Available
+  Recruiter to contact: 
+  Average Intern Pay: $40
+  Possible opening time frame: August
+  Type of Internship: Fall/Summer
+
+}
+----------------------------------------------------------
+Company info Service:
+*Input Company Id
+*Output Company full details
+-return company information
+-Company Name
+-Type of company: Big company, small company, medium sized -> Can be calculated with the size of their following on LinkedIn
+
+<<Create Database of companies>>
+if(not in database, create and put into database>>
+
+Company Review Service:
+*Input Company name
+*Output reviews
+--company id
+--good Reviews
+--bad Reviews
+--Most Recent review
+
+Recruiter Microservice("/{id}/{id}   for every company id, retrieve list of recruiters:
+*Input: CompanyID
+*Output: List of recruiters and their links
+--Recruiter Id--
+--Company They work for
+--How long they've worked
+--LinkedIn profile <Get that info from LinkedIn's public api>
+
+Company-User Microservice (receives the user id as a path variable):  [[[[[END POINT FOR UI]]]]
+*Input UserId and CompanyId
+*Output: Just add these three details
+--Rejected Previously: No
+--Applied Previously: No
+--Wait time: 0
+
+Internship Microservice:
+-Type of Internship: Fall/Summer
+-Average Intern pay
+
+Program that tells you the value of those companies in stocks
+
+Program that displays the companies info + extra metadata on a single page -- Program should link to the hiring page/application page
+-- Same program should have accounts for each person plus security
+-- Main page should have companies you consider your favorite
+** I think this last program would have the blueprint for the data needed**
+
+User service:
+--User Id--
+
+
+
+
+Technology required:
+-Spring Boot
+-Java
+-Spring Security
+-Docker
+-Spring Cloud
+-Eureka ?? 
+
+Information stored:
+-About Company
+-About User
+
+Complexity:
+--
