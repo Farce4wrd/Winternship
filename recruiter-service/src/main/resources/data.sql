@@ -1,0 +1,4 @@
+INSERT INTO RECRUITER (RECRUITER_NAME,COMPANY_ID,RECRUITER_YEAR,RECRUITER_PROFILE) VALUES ('Bhuvanalakshmi Muralidhar', 1,0.25,'https://www.linkedin.com/in/bhuvanalakshmi-muralidhar-b7667b205');
+INSERT INTO RECRUITER (RECRUITER_NAME,COMPANY_ID,RECRUITER_YEAR,RECRUITER_PROFILE) VALUES ('Vicannia Merisma', 2,1,'https://www.linkedin.com/in/vicannia-merisma-ba632934/');
+INSERT INTO RECRUITER (RECRUITER_NAME,COMPANY_ID,RECRUITER_YEAR,RECRUITER_PROFILE) VALUES ('Zia Johnson',3,1,'https://www.linkedin.com/in/ziajohnson/');
+INSERT INTO RECRUITER (RECRUITER_NAME,COMPANY_ID,RECRUITER_YEAR,RECRUITER_PROFILE) VALUES ('Alex Bryant',5,0.7, 'https://www.linkedin.com/in/alexandrakaybryant/');
