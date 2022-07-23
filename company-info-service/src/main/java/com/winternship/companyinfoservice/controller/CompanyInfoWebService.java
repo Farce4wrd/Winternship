@@ -1,5 +1,7 @@
 package com.winternship.companyinfoservice.controller;
 
+import java.util.Optional;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +27,8 @@ public class CompanyInfoWebService {
 	
 	@GetMapping("/{id}")
 	public Company getCompany(@PathVariable long id) {
+		//Optional<Company> temp = this.companyRepo.findById(id);
+		
 		return this.companyRepo.findById(id).get();
 	}
 
