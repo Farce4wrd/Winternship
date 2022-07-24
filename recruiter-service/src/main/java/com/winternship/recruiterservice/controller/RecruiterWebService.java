@@ -24,7 +24,7 @@ public class RecruiterWebService {
 	}
 	
 	@GetMapping("/{id}")
-	public Recruiter getRecruiter(@PathVariable long id) {
+	public Recruiter getRecruiter(@PathVariable("id") long id) {
 		return this.recruiterRepo.findById(id).get();
 	}
 	

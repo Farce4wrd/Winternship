@@ -25,7 +25,7 @@ public class CompanyReviewWebService {
 	}
 	
 	@GetMapping("/{id}")
-	public Review getCompany(@PathVariable long id) {
+	public Review getCompany(@PathVariable("id") long id) {
 		return this.companyReviewRepository.findById(id).get();
 		
 	}
