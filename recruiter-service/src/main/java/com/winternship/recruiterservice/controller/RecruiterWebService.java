@@ -9,7 +9,7 @@ import com.winternship.recruiterservice.entity.Recruiter;
 import com.winternship.recruiterservice.repo.RecruiterRepository;
 
 @RestController
-@RequestMapping("/recruiter")
+@RequestMapping("/recruiters")
 public class RecruiterWebService {
 
 	private final RecruiterRepository recruiterRepo;

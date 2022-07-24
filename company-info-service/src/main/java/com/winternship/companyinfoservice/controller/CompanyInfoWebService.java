@@ -11,7 +11,7 @@ import com.winternship.companyinfoservice.entity.Company;
 import com.winternship.companyinfoservice.repo.CompanyInfoRepository;
 
 @RestController
-@RequestMapping("/company-info")
+@RequestMapping("/companies")
 public class CompanyInfoWebService {
 	
 	private final CompanyInfoRepository companyRepo;
