@@ -30,7 +30,7 @@ public class SecurityConfigurer{
 	
 	@Bean
 	public UserDetailsManager users(DataSource dataSource){
-		//UserDetails user = User.withDe
+		
 		return new JdbcUserDetailsManager(dataSource);
 	}
 
