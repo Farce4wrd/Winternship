@@ -25,10 +25,8 @@ import com.google.common.net.HttpHeaders;
 public class LoginFilter extends OncePerRequestFilter{
 	
 	//private final UserDetailsManager users;
-	@Autowired
-	private AuthenticationManager authenticationManager;
-	@Autowired
-	private JwtUtil jwtUtil;
+	private final AuthenticationManager authenticationManager;
+	private final JwtUtil jwtUtil;
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
@@ -60,7 +58,7 @@ public class LoginFilter extends OncePerRequestFilter{
 		return !isLogin;
 	}
 	
-	@Autowired
+	
 	public LoginFilter(AuthenticationManager authen, JwtUtil jwtUtil) {
 		this.authenticationManager = authen;
 		this.jwtUtil = jwtUtil;
