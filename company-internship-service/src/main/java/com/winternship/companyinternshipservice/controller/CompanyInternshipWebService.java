@@ -1,5 +1,7 @@
 package com.winternship.companyinternshipservice.controller;
 
+import java.security.Principal;
+
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +28,10 @@ public class CompanyInternshipWebService {
 	@GetMapping("/test")
 	public String test() {
 		return "This was a test for security";
+	}
+	@GetMapping("/user")
+	public String home(Principal principal) {
+		return "Hello, " + principal.getName();
 	}
 	
 	
