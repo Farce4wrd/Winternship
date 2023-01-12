@@ -1,15 +1,16 @@
 package com.winternship.companyinternshipservice.security;
 
-import static org.springframework.security.config.Customizer.withDefaults;
-
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
-import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -17,22 +18,33 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfigurer{
 	
 	@Bean
+	JdbcUserDetailsManager users(DataSource dataSource) {
+		JdbcUserDetailsManager jdbc = new JdbcUserDetailsManager(dataSource);
+		return jdbc;
+	}
+
+	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
 		http
-			.authorizeHttpRequests((authz) -> authz
-					.anyRequest().authenticated()
-					)
-					.httpBasic(withDefaults());
+		.csrf(csrf -> csrf.ignoringAntMatchers("/h2-console/**"))
+        .authorizeHttpRequests( authorizeConfig ->{
+        	authorizeConfig.antMatchers("/test").authenticated();
+        	authorizeConfig.antMatchers("/h2-console/**").permitAll();
+        	authorizeConfig.anyRequest().authenticated();
+        })
+        .headers(headers -> headers.frameOptions().sameOrigin())
+        .formLogin()
+        .and()
+        .logout()
+        .clearAuthentication(true)
+        .invalidateHttpSession(true);
+    return http.build();
 		
 		
-		return http.build();
+
 	}
+
 	
-	@Bean
-	public UserDetailsManager users(DataSource dataSource){
-		
-		return new JdbcUserDetailsManager(dataSource);
-	}
 
 
 }
