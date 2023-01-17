@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class Review {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="REVIEW_ID")
 	private long id;
 	@Column(name="COMPANY_ID")

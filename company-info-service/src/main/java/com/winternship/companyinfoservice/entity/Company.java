@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table
 public class Company {
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name="COMPANY_ID")
 	private long companyId;
 	@Column(name="COMPANY_NAME")
@@ -36,6 +36,11 @@ public class Company {
 	}
 	public void setCompanyType(String companyType) {
 		this.companyType = companyType;
+	}
+	@Override
+	public String toString() {
+		return "Company [companyId=" + companyId + ", companyName=" + companyName + ", companyType=" + companyType
+				+ "]";
 	}
 
 }

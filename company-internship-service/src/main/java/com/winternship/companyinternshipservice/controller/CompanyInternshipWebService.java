@@ -29,11 +29,7 @@ public class CompanyInternshipWebService {
 	public String test() {
 		return "This was a test for security";
 	}
-	@GetMapping("/user")
-	public String home(Principal principal) {
-		return "Hello, " + principal.getName();
-	}
-	
+
 	
 
 }
